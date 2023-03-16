@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "782506690370",
+    "project_id": "leafanalyzer",
+    "storage_bucket": "leafanalyzer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782506690370:android:d3d146a724db4ac27daadb",
+        "android_client_info": {
+          "package_name": "com.pankaj.leafanalyzer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782506690370-i332k8p12plk8727o977ik8teotjlllb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8RTgRyX1MfIoKLwKtMbwdVx0wdUEWliM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782506690370-i332k8p12plk8727o977ik8teotjlllb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
