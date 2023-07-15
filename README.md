@@ -16,3 +16,4 @@ Tech stack:
 Contributions:
 -Developed the image recognition algorithm
 -Implemented the user interface
+
