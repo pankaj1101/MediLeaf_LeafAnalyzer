@@ -34,10 +34,10 @@ public class LeafAnalyzer extends AppCompatActivity {
     private ImageView select, open_camera, open_gallery;
     final int imageSize = 224;
     private Uri imageUri;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
-    String nameofleaf;
-
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private String nameofleaf;
+    boolean isImageSelected = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,11 +71,20 @@ public class LeafAnalyzer extends AppCompatActivity {
         });
 
         start_btn.setOnClickListener(v -> {
+
             Bitmap image = ((BitmapDrawable) select.getDrawable()).getBitmap();
-            int dimension = Math.min(image.getWidth(), image.getHeight());
-            ThumbnailUtils.extractThumbnail(image, dimension, dimension);
-            image = Bitmap.createScaledBitmap(image, imageSize, imageSize, false);
-            classifyImage(image);
+            Log.d("debug","Image Path:"+image);
+
+
+            if (isImageSelected) {
+                int dimension = Math.min(image.getWidth(), image.getHeight());
+                ThumbnailUtils.extractThumbnail(image, dimension, dimension);
+                image = Bitmap.createScaledBitmap(image, imageSize, imageSize, false);
+                classifyImage(image);
+            } else {
+                Toast.makeText(getApplicationContext(), "Please select an image.", Toast.LENGTH_SHORT).show();
+            }
+
         });
     }
 
@@ -109,7 +118,7 @@ public class LeafAnalyzer extends AppCompatActivity {
 
             float[] confidence = outputFeatures0.getFloatArray();
             int maxPos = 0;
-           float maxConfidence = 0;
+            float maxConfidence = 0;
             for (int i = 0; i < confidence.length; i++) {
                 if (confidence[i] > maxConfidence) {
                     maxConfidence = confidence[i];
@@ -183,7 +192,7 @@ public class LeafAnalyzer extends AppCompatActivity {
 
                 String description = dataSnapshot.child("0").getValue(String.class);
 
-                builderInner.setTitle("Description : "+strName);
+                builderInner.setTitle("Description : " + strName);
                 builderInner.setMessage(description);
 
                 builderInner.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -224,6 +233,8 @@ public class LeafAnalyzer extends AppCompatActivity {
                 try {
                     bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
                     select.setImageBitmap(bitmap);
+                    isImageSelected = true;
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -235,6 +246,7 @@ public class LeafAnalyzer extends AppCompatActivity {
                 image = ThumbnailUtils.extractThumbnail(image, dimension, dimension);
                 select.setImageBitmap(image);
                 image = Bitmap.createScaledBitmap(image, imageSize, imageSize, false);
+                isImageSelected = true;
                 classifyImage(image);
             }
         } else {
