@@ -18,11 +18,9 @@ Contributions:
 -Developed the image recognition algorithm
 -Implemented the user interface
 
-<table>
-  <tr>
-    <td><img src="https://github.com/pankaj1101/MediLeaf_LeafAnalyzer/assets/116742441/e9cd4c6b-ff1a-4b6c-a104-d2f6461ae439" alt="Image 1" style="width: 300px; height: 600px;"></td>
-    <td><img src="https://github.com/pankaj1101/MediLeaf_LeafAnalyzer/assets/116742441/e9cd4c6b-ff1a-4b6c-a104-d2f6461ae439" alt="Image 2" style="width: 300px; height: 600px;"></td>
-  </tr>
-</table>
+| Output | Output |
+| ------ | ------ |
+| ![WhatsApp Image 2023-07-18 at 3 33 22 PM](https://github.com/pankaj1101/MediLeaf_LeafAnalyzer/assets/116742441/e9cd4c6b-ff1a-4b6c-a104-d2f6461ae439) | ![WhatsApp Image 2023-07-18 at 3 33 22 PM](https://github.com/pankaj1101/MediLeaf_LeafAnalyzer/assets/116742441/e9cd4c6b-ff1a-4b6c-a104-d2f6461ae439) |
+
 
 
